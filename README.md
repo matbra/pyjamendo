@@ -2,9 +2,7 @@
 A Python module to access the Jamendo API v3.0. Until now, only a small subset of functionality provided by the Jamendo 
 API is supported. A detailed description of the API can be found at https://developer.jamendo.com/v3.0.
 
-Until now, only the search for *tracks* is supported.
-
-The results are returned 
+Until now, only the search for *tracks* is supported. 
 
 ## Installation
 pyjamendo can be installed from the source code via setuptools:
