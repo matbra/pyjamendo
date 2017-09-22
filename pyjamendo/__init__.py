@@ -1,6 +1,4 @@
 import requests
-from zipfile import ZipFile
-from io import StringIO, BytesIO
 
 jamendo_params = {
 'entities': ['tracks'],
@@ -26,7 +24,7 @@ def get_durationbetween_string(duration_min_sec, duration_max_sec):
 
     return '{}_{}'.format(duration_min_sec, duration_max_sec)
 
-class connector():
+class Connector():
     def __init__(self, client_id):
         self.client_id = client_id
         self.api_url = 'https://api.jamendo.com'
@@ -59,7 +57,7 @@ class connector():
         params_processed['client_id'] = self.client_id
         params_processed['format'] = 'json'
 
-        # loop throug all parameters and process according to the api's format specification
+        # loop through all parameters and process according to the api's format specification
         for key, value in params.items():
             params_processed[key] = value
 
@@ -82,16 +80,8 @@ class connector():
         f.write(data._content)
         f.close()
 
-        # zipfile = ZipFile(BytesIO(data._content))
-        # zipfile.extractall(dir_output)
-
-        # print(data.content_)
         return True
         
-        
-
-
-
 def search_album(name):
     payload = {'client_id': client_id,
                'format': 'json',
