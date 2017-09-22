@@ -89,4 +89,3 @@ def search_album(name):
     r = requests.get(get_url('albums'), params=payload)
 
     return r.json()
-# def set_file_format(
